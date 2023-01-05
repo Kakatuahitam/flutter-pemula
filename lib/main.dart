@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_pemula/resources/constant.dart';
 import 'package:flutter_pemula/resources/utility.dart';
@@ -21,8 +23,25 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget{
+  void showAlert(BuildContext context) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Selamat Datang!'),
+          content: Text('Website ini masih dalam tahap pengembangan'),
+          actions: [
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Semangat!'),
+          ),
+        ],
+      )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration.zero, () => showAlert(context));
     return Scaffold(
       backgroundColor: Constant.LS_ECRU_WHITE,
       // appBar: AppBar(
@@ -172,46 +191,104 @@ class Home extends StatelessWidget{
               decoration: BoxDecoration(color: Constant.LS_ECRU_WHITE),
               padding: EdgeInsets.all(16),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset('images/icons/pramukauinjkt48px.png', width: 48, height: 48),
-                  Text('Gerakan Pramuka UIN Syarif Hidayatullah Jakarta'),
+                  Text('Gerakan Pramuka UIN Syarif Hidayatullah Jakarta',
+                    style: ThemeText.standardNormal_p,
+                    textAlign: TextAlign.justify,
+                  ),
                   Text(''),
-                  Text('Jl. Ir. H. Juanda No.95, Ciputat, Tangerang Selatan,'),
-                  Text('Gd. Student Center Lt.3'),
-                  Text('Kampus 1 UIN Syarif Hidayatullah Jakarta'),
+                  Text('Jl. Ir. H. Juanda No.95, Ciputat, Tangerang Selatan,',
+                    style: ThemeText.standardNormal_p,
+                    textAlign: TextAlign.justify,
+                  ),
+                  Text('Gd. Student Center Lt.3',
+                    style: ThemeText.standardNormal_p,
+                    textAlign: TextAlign.justify,
+                  ),
+                  Text('Kampus 1 UIN Syarif Hidayatullah Jakarta',
+                    style: ThemeText.standardNormal_p,
+                    textAlign: TextAlign.justify,
+                  ),
+                  Text(''),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset('images/icons/FB_p.png', height: 24.0),
-                      Text('Gerakan Pramuka UIN Syarif Hidayatullah Jakarta'),
+                      const SizedBox(width: 8.0),
+                      Text('Gerakan Pramuka UIN Syarif Hidayatullah Jakarta',
+                          style: ThemeText.standardNormal_p,
+                          textAlign: TextAlign.justify,
+                      ),
                     ],
                   ),
 
+                  const SizedBox(height: 12.0),
                   Row(
                     children: [
                       Image.asset('images/icons/IG_p.png', height: 24.0),
-                      Text('@pramukauinjakarta'),
+                      const SizedBox(width: 8.0),
+                      Text('@pramukauinjakarta',
+                        style: ThemeText.standardNormal_p,
+                        textAlign: TextAlign.justify,
+                      ),
                     ],
                   ),
 
+                  const SizedBox(height: 12.0),
                   Row(
                     children: [
                       Image.asset('images/icons/Twitter_p.png', height: 24.0),
-                      Text('@pramukauinjkt'),
+                      const SizedBox(width: 8.0),
+                      Text('@pramukauinjkt',
+                        style: ThemeText.standardNormal_p,
+                        textAlign: TextAlign.justify,
+                      ),
                     ],
                   ),
 
+                  const SizedBox(height: 12.0),
                   Row(
                     children: [
                       Image.asset('images/icons/Youtube_p.png', height: 24.0),
-                      Text('Pramuka UIN Jakarta'),
+                      const SizedBox(width: 8.0),
+                      Text('Pramuka UIN Jakarta',
+                        style: ThemeText.standardNormal_p,
+                        textAlign: TextAlign.justify,
+                      ),
                     ],
                   ),
 
+                  const SizedBox(height: 12.0),
                   Row(
                     children: [
-                      Image.asset('images/icons/Gmail_p.png', height: 24.0),
-                      Text('pramuka@uinjkt.ac.id'),
+                      Image.asset('images/icons/Gmail_p.png', width: 24.0),
+                      const SizedBox(width: 8.0),
+                      Text('pramuka@uinjkt.ac.id',
+                        style: ThemeText.standardNormal_p,
+                        textAlign: TextAlign.justify,
+                      ),
                     ],
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(color: Constant.DS_PURPLE),
+                      padding: const EdgeInsets.all(8),
+                      child: Text('© Pramuka UIN Jakarta 2023',
+                        style: ThemeText.standardMini_w,
+                        textAlign: TextAlign.end,
+                      ),
+                    )
                   ),
                 ],
               ),

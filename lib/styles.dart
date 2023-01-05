@@ -51,17 +51,32 @@ abstract class ThemeText {
     fontWeight: FontWeight.w700
   );
 
+  // w400
   static TextStyle standardNormal_p = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     color: Constant.DS_PURPLE,
   );
 
   static TextStyle standardNormal_w = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
+    color: Constant.LS_ECRU_WHITE,
+  );
+
+  static TextStyle standardMini_p = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 10.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.DS_PURPLE,
+  );
+
+  static TextStyle standardMini_w = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 10.0,
+    fontWeight: FontWeight.w500,
     color: Constant.LS_ECRU_WHITE,
   );
 }
