@@ -60,7 +60,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - images/
+    - images/icons/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -87,5 +89,65 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+  - family: +JakartaSansDisplay
+    fonts:
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-Regular.otf
+        weight: 400
+        style: normal
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-Italic.otf
+        weight: 400
+        style: italic
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-Light.otf
+        weight: 300
+        style: normal
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-LightItalic.otf
+        weight: 300
+        style: italic
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-Medium.otf
+        weight: 500
+        style: normal
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-MediumItalic.otf
+        weight: 500
+        style: italic
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-Bold.otf
+        weight: 700
+        style: normal
+
+      - asset: fonts/+JakartaSansDisplay/+JakartaSansDisplay-BoldItalic.otf
+        weight: 700
+        style: italic
+
+  - family: +JakartaSansText
+    fonts:
+      - asset: fonts/+JakartaSansText/+JakartaSansText-Book.otf
+        weight: 400
+        style: normal
+
+      - asset: fonts/+JakartaSansText/+JakartaSansText-BookItalic.otf
+        weight: 400
+        style: italic
+
+      - asset: fonts/+JakartaSansText/+JakartaSansText-Light.otf
+        weight: 300
+        style: normal
+
+      - asset: fonts/+JakartaSansText/+JakartaSansText-LightItalic.otf
+        weight: 300
+        style: italic
+
+      - asset: fonts/+JakartaSansText/+JakartaSansText-Bold.otf
+        weight: 700
+        style: normal
+
+      - asset: fonts/+JakartaSansText/+JakartaSansText-BoldItalic.otf
+        weight: 700
+        style: italic
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
