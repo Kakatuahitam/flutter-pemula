@@ -54,7 +54,8 @@ jobs:
           script: |
             cd ~/.nf/
             rm -rf flutter/
-            cp flutter-scp/ flutter-scp-check/
+            cp -r flutter-scp/ flutter-scp-check/
             mv flutter-scp/ flutter/
+            ls -la
             sudo systemctl restart nginx
             
