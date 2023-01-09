@@ -24,10 +24,10 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
-      - name: Set up GCloud SDK
+      - name: Set up gcloud SDK
         uses: google-github-actions/setup-gcloud@v1
 
-      - name: GCloud info
+      - name: gcloud info
         run: gcloud info
 
       - name: Enable Flutter Web
@@ -38,9 +38,12 @@ jobs:
 
       - name: Build the web
         run: flutter build web
+      
+      - name: Disable gcloud prompts
+        run: gcloud config set disable_prompts true
 
       - name: SCP to server
-        run: 'gcloud compute scp --recurse build/web/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:~/.nf/flutter-scp --quiet'
+        run: 'gcloud compute scp --recurse build/web/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:~/.nf/flutter-scp'
 
       - name: SSH to server
         run: gcloud compute ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }} --quiet
