@@ -93,4 +93,18 @@ abstract class ThemeText {
     fontWeight: FontWeight.w500,
     color: Constant.LS_ECRU_WHITE,
   );
+
+  static TextStyle standardSoon_p = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 10.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.DS_PURPLE,
+  );
+
+  static TextStyle standardSoon_w = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 10.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.LS_ECRU_WHITE,
+  );
 }

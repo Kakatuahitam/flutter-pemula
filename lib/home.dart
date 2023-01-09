@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pemula/styles.dart';
 import 'package:flutter_pemula/resources/constant.dart';
 import 'package:flutter_pemula/resources/utility.dart';
-import 'package:flutter_pemula/styles.dart';
-
 import 'package:flutter_pemula/forms/subscriptionform.dart';
+import 'package:flutter_pemula/screens/small/aboutscreen.dart';
+import 'package:flutter_pemula/widgets/small/socialmedia.dart';
+import 'package:flutter_pemula/widgets/small/copyright.dart';
 
 import 'package:meta_seo/meta_seo.dart';
 import 'dart:js' as js;
@@ -82,7 +84,12 @@ class Home extends StatelessWidget{
               ),
             ),
             ListTile(
-              title: Text('Masuk', style: ThemeText.standardNormal_p),
+              title: Row(
+                children: [
+                  Text('Masuk', style: ThemeText.standardNormal_p),
+                  Text(' coming soon', style: ThemeText.standardSoon_p)
+                ],
+              ),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -98,12 +105,22 @@ class Home extends StatelessWidget{
             ),
 
             ListTile(
-              title: Text('Visi Misi', style: ThemeText.standardNormal_p),
+              title: Row(
+                children: [
+                  Text('Visi Misi', style: ThemeText.standardNormal_p),
+                  Text(' coming soon', style: ThemeText.standardSoon_p)
+                ],
+              ),
               onTap: () {},
             ),
 
             ListTile(
-              title: Text('Pengurus Dewan Racana 2023', style: ThemeText.standardNormal_p),
+              title: Row(
+                children: [
+                  Text('Pengurus Dewan Racana 2023', style: ThemeText.standardNormal_p),
+                  Text(' coming soon', style: ThemeText.standardSoon_p)
+                ],
+              ),
               onTap: () {},
             ),
 
@@ -111,7 +128,11 @@ class Home extends StatelessWidget{
 
             ListTile(
               title: Text('Tentang Website', style: ThemeText.standardNormal_p),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return AboutScreen();
+                }));
+              },
             ),
 
             ListTile(
@@ -355,113 +376,8 @@ class Home extends StatelessWidget{
               ),
             ),
 
-            Container(
-              decoration: BoxDecoration(color: Constant.LS_ECRU_WHITE),
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset('images/icons/pramukauinjkt48px.png', width: 48, height: 48),
-                  SizedBox(height: 8.0),
-                  Text('Gerakan Pramuka UIN Syarif Hidayatullah Jakarta',
-                    style: ThemeText.standardNormal_p,
-                    textAlign: TextAlign.justify,
-                  ),
-                  Text(''),
-                  Text('Jl. Ir. H. Juanda No.95, Ciputat, Tangerang Selatan,',
-                    style: ThemeText.standardNormal_p,
-                    textAlign: TextAlign.justify,
-                  ),
-                  Text('Gd. Student Center Lt.3',
-                    style: ThemeText.standardNormal_p,
-                    textAlign: TextAlign.justify,
-                  ),
-                  Text('Kampus 1 UIN Syarif Hidayatullah Jakarta',
-                    style: ThemeText.standardNormal_p,
-                    textAlign: TextAlign.justify,
-                  ),
-                  Text(''),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Image.asset('images/icons/FB_p.png', height: 24.0),
-                      const SizedBox(width: 8.0),
-                      Text('Gerakan Pramuka UIN Syarif Hidayatullah Jakarta',
-                          style: ThemeText.standardNormal_p,
-                          textAlign: TextAlign.justify,
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 12.0),
-                  Row(
-                    children: [
-                      Image.asset('images/icons/IG_p.png', height: 24.0),
-                      const SizedBox(width: 8.0),
-                      Text('@pramukauinjakarta',
-                        style: ThemeText.standardNormal_p,
-                        textAlign: TextAlign.justify,
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 12.0),
-                  Row(
-                    children: [
-                      Image.asset('images/icons/Twitter_p.png', height: 24.0),
-                      const SizedBox(width: 8.0),
-                      Text('@pramukauinjkt',
-                        style: ThemeText.standardNormal_p,
-                        textAlign: TextAlign.justify,
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 12.0),
-                  Row(
-                    children: [
-                      Image.asset('images/icons/Youtube_p.png', height: 24.0),
-                      const SizedBox(width: 8.0),
-                      Text('Pramuka UIN Jakarta',
-                        style: ThemeText.standardNormal_p,
-                        textAlign: TextAlign.justify,
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 12.0),
-                  Row(
-                    children: [
-                      Image.asset('images/icons/Gmail_p.png', width: 24.0),
-                      const SizedBox(width: 8.0),
-                      Text('pramuka@uinjkt.ac.id',
-                        style: ThemeText.standardNormal_p,
-                        textAlign: TextAlign.justify,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(color: Constant.DS_PURPLE),
-                      padding: const EdgeInsets.all(8),
-                      child: Text('© Pramuka UIN Jakarta 2023',
-                        style: ThemeText.standardMini_w,
-                        textAlign: TextAlign.end,
-                      ),
-                    )
-                  ),
-                ],
-              ),
-            ),
+            SocialMedia(),
+            Copyright(),
           ],
         ),
       ),
