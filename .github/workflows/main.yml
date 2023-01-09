@@ -41,7 +41,7 @@ jobs:
         
       - name: Replace flutter folder with latest builder
         run: |
-          cat << EOF > ${{ LOCAL_SCRIPT }}
+          cat << EOF > ${{ secrets.LOCAL_SCRIPT }}
           cd ~/.nf/
           ls
           rm -rf flutter
@@ -56,29 +56,7 @@ jobs:
         run: 'gcloud compute scp --recurse build/web/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:~/.nf/flutter-scp --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }}'
 
       - name: SCP the script to server
-        run: 'gcloud compute scp ${{ LOCAL_SCRIPT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:${{ REMOTE_SCRIPT }} --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }}'
+        run: 'gcloud compute scp ${{ secrets.LOCAL_SCRIPT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:${{ secrets.REMOTE_SCRIPT }} --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }}'
 
       - name: SSH the script on server
-        run: gcloud compute ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }} --quiet --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }} -- ${{ REMOTE_SCRIPT }}
-
-#       - name: Replace flutter folder with latest builder
-#         run: |
-#           cd ~/.nf/
-#           ls
-#           rm -rf flutter
-#           mv flutter-scp/ flutter/
-#           sudo systemctl restart nginx
-      
-#       - name: Deploy to server via ssh
-#         uses: appleboy/ssh-action@master
-#         with:
-#           host: ${{ secrets.SSH_HOST }}
-#           username: ${{ secrets.SSH_USERNAME }}
-#           key: ${{ secrets.SSH_PRIVATE_KEY }}
-#           port: 22
-#           script: |
-#             cd ~/.nf/
-#             ls
-#             rm -rf flutter
-#             mv flutter-scp/ flutter/
-#             sudo systemctl restart nginx
+        run: gcloud compute ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }} --quiet --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }} -- ${{ secrets.REMOTE_SCRIPT }}
