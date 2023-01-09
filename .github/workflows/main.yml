@@ -2,7 +2,7 @@ name: ci
 
 on:
   push:
-    brances:
+    branches:
       - main
 
 jobs:
@@ -18,6 +18,18 @@ jobs:
           flutter-version: '3.7.0-15.0.pre.16'
           channel: 'master'
 
+      - name: Authenticating Github Action for Google
+        id: 'auth'
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Set up GCloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: GCloud info
+        run: gcloud info
+
       - name: Enable Flutter Web
         run: flutter config --
 
@@ -27,9 +39,23 @@ jobs:
       - name: Build the web
         run: flutter build web
 
-      - name: Just to check pwd
-        run: pwd
-        
+      - name: SCP to server
+        run: 'gcloud compute scp --recurse build/web/ kakatuahitam_services@punyacerita:~/.nf/flutter-scp'
+
+      - name: SSH to server
+        run: gcloud compute ssh kakatuahitam_services@punyacerita
+
+      - name: Replace flutter folder with latest builder
+        run: |
+          cd ~/.nf/
+          ls
+          rm -rf flutter
+          mv flutter-scp/ flutter/
+          sudo systemctl restart nginx
+      # - name: Install
+      # - name: Print pwd
+      #   run: pwd
+
       # - name: Deploy to server via ssh
       #   uses: appleboy/ssh-action@master
       #   with:
@@ -38,4 +64,3 @@ jobs:
       #     key: ${{ secrets.SSH_PRIVATE_KEY }}
       #     port: 22
       #     script: |
-      #       cd ~/.nf/
