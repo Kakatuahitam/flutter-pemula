@@ -40,10 +40,10 @@ jobs:
         run: flutter build web
 
       - name: SCP to server
-        run: 'gcloud compute scp --recurse build/web/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:~/.nf/flutter-scp -y'
+        run: 'gcloud compute scp --recurse build/web/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:~/.nf/flutter-scp --quiet'
 
       - name: SSH to server
-        run: gcloud compute ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}
+        run: gcloud compute ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }} --quiet
 
       - name: Replace flutter folder with latest builder
         run: |
