@@ -79,4 +79,18 @@ abstract class ThemeText {
     fontWeight: FontWeight.w500,
     color: Constant.LS_ECRU_WHITE,
   );
+
+  static TextStyle standardFormField_p = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.DS_PURPLE,
+  );
+
+  static TextStyle standardFormField_w = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.LS_ECRU_WHITE,
+  );
 }
