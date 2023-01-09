@@ -9,7 +9,7 @@ import 'package:flutter_pemula/widgets/small/socialmedia.dart';
 import 'package:flutter_pemula/widgets/small/copyright.dart';
 
 import 'package:meta_seo/meta_seo.dart';
-import 'dart:js' as js;
+// import 'dart:js' as js;
 
 
 class Home extends StatelessWidget{
