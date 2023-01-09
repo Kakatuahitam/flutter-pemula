@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    brances:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout to master
+        uses: actions/checkout@master
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.7.0-15.0.pre.16'
+          channel: 'master'
+
+      - name: Enable Flutter Web
+        run: flutter config --
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build the web
+        run: flutter build web
+
+      - name: Just to check pwd
+        run: pwd
+        
+      # - name: Deploy to server via ssh
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     port: 22
+      #     script: |
+      #       cd ~/.nf/
