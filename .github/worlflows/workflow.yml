@@ -29,7 +29,7 @@ jobs:
 
       - name: Just to check pwd
         run: pwd
-
+        
       # - name: Deploy to server via ssh
       #   uses: appleboy/ssh-action@master
       #   with:
