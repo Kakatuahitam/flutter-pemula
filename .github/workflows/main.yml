@@ -53,8 +53,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/.nf/
-            ls
-            rm -rf flutter
+            rm -rf flutter/
+            cp flutter-scp/ flutter-scp-check/
             mv flutter-scp/ flutter/
             sudo systemctl restart nginx
             
