@@ -38,16 +38,6 @@ jobs:
 
       - name: Build the web
         run: flutter build web
-        
-      - name: Replace flutter folder with latest builder
-        run: |
-          cat << EOF > ${{ secrets.LOCAL_SCRIPT }}
-          cd ~/.nf/
-          ls
-          rm -rf flutter
-          mv flutter-scp/ flutter/
-          sudo systemctl restart nginx
-          EOF
       
       - name: Disable gcloud prompts
         run: gcloud config set disable_prompts true
@@ -55,8 +45,16 @@ jobs:
       - name: SCP to server
         run: 'gcloud compute scp --recurse build/web/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:~/.nf/flutter-scp --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }}'
 
-      - name: SCP the script to server
-        run: 'gcloud compute scp ${{ secrets.LOCAL_SCRIPT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }}:${{ secrets.REMOTE_SCRIPT }} --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }}'
-
-      - name: SSH the script on server
-        run: gcloud compute ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_VM_NAME }} --quiet --project=${{ secrets.GCP_PROJECT }} --zone=${{ secrets.GCP_ZONE }} -- ${{ secrets.REMOTE_SCRIPT }}
+      - name: Execute the script on remote via ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME}}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/.nf/
+            ls
+            rm -rf flutter
+            mv flutter-scp/ flutter/
+            sudo systemctl restart nginx
+            
