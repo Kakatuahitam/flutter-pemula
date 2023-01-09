@@ -1,5 +1,5 @@
 name: flutter_pemula
-description: A new Flutter project.
+description: Portal Website Resmi Pramuka UIN Jakarta
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   meta_seo: ^1.0.5
+  flutter_launcher_icons: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -152,3 +153,27 @@ flutter:
         style: italic
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  image_path: images/icons/appIcon.png
+  # #  image_path: "assets/images/icon-128x128.png"
+  # image_path_android: "images/icon-710x599-android.png"
+  # image_path_ios: "images/icon-1024x1024.png"
+  # android: true # can specify file name here e.g. "ic_launcher"
+  # ios: true # can specify file name here e.g. "My-Launcher-Icon"
+  adaptive_icon_background: "#FF5914C5" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "images/icons/whiteAppIcon.png" # only available for Android 8.0 devices and above
+  # min_sdk_android: 21 # android min sdk min:16, default 21
+  remove_alpha_ios: true
+  web:
+    generate: true
+  # #   image_path: "assets/images/icon-1024x1024.png"
+    background_color: "#FFF2EFEC"
+    theme_color: "#FF5914C5"
+  windows:
+    generate: true
+  # #   image_path: "assets/images/icon-1024x1024.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+  # #   image_path: "assets/images/icon-1024x1024.png"

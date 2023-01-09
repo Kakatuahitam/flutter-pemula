@@ -1,9 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pemula/resources/constant.dart';
 import 'package:flutter_pemula/resources/utility.dart';
 import 'package:flutter_pemula/styles.dart';
 
 import 'package:flutter_pemula/forms/subscriptionform.dart';
+
+import 'package:meta_seo/meta_seo.dart';
+import 'dart:js' as js;
+
 
 class Home extends StatelessWidget{
   void showAlert(BuildContext context) {
@@ -26,6 +31,27 @@ class Home extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+
+      // Facebook meta tags
+      meta.seoMetaKeyValue('og:url', 'https://pramuka.uinjkt.ac.id');
+      meta.seoMetaKeyValue('og:type', 'website');
+      meta.seoMetaKeyValue('og:title', 'Kami Ada Karena Semangat Kami! | Pramuka UIN Jakarta');
+      meta.seoMetaKeyValue('og:description', 'Pramuka UIN Jakarta merupakan salah satu Unit Kegiatan Khusus (UKK) yang berada pada pangkalan UIN Syarif Hidayatullah Jakarta');
+      meta.seoMetaKeyValue('og:image', 'https://raw.githubusercontent.com/Kakatuahitam/flutter-pemula/main/images/main-background.webp');
+      meta.seoMetaKeyValue('og:image:type', 'image/png');
+      meta.seoMetaKeyValue('og:image:width', '400');
+      meta.seoMetaKeyValue('og:image:height', '400');
+
+      // Twitter meta tags
+      meta.seoMetaKeyValue('twitter:card', 'summary_large_image');
+      meta.seoMetaKeyValue('twitter:domain', 'pramuka.uinjkt.ac.id');
+      meta.seoMetaKeyValue('twitter:url', 'https://pramuka.uinjkt.ac.id');
+      meta.seoMetaKeyValue('twitter:description', 'Pramuka UIN Jakarta merupakan salah satu Unit Kegiatan Khusus (UKK) yang berada pada pangkalan UIN Syarif Hidayatullah Jakarta');
+      meta.seoMetaKeyValue('twitter:card', 'https://raw.githubusercontent.com/Kakatuahitam/flutter-pemula/main/images/main-background.webp');
+    }
+
     Future.delayed(Duration.zero, () => showAlert(context));
     return Scaffold(
       appBar: AppBar(
@@ -220,7 +246,7 @@ class Home extends StatelessWidget{
                                       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(16),
-                                        child: Image.asset('images/binadiri.webp'),
+                                        child: Image.network('https://raw.githubusercontent.com/Kakatuahitam/flutter-pemula/main/images/binadiri.webp'),
                                       ),
                                     ),
                                   ),
@@ -250,7 +276,7 @@ class Home extends StatelessWidget{
                                       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(16),
-                                        child: Image.asset('images/binasatuan.webp'),
+                                        child: Image.network('https://raw.githubusercontent.com/Kakatuahitam/flutter-pemula/main/images/binasatuan.webp'),
                                       ),
                                     ),
                                   ),
@@ -280,7 +306,7 @@ class Home extends StatelessWidget{
                                       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(16),
-                                        child: Image.asset('images/binamasyarakat.webp'),
+                                        child: Image.network('https://raw.githubusercontent.com/Kakatuahitam/flutter-pemula/main/images/binamasyarakat.webp'),
                                       ),
                                     ),
                                   ),

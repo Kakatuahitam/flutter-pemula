@@ -1,11 +1,11 @@
 {
-    "name": "flutter_pemula",
-    "short_name": "flutter_pemula",
+    "name": "Pramuka UIN Jakarta",
+    "short_name": "Pramuka UIN Jakarta",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#F2EFEC",
+    "theme_color": "#5914C5",
+    "description": "Portal Website Resmi Pramuka UIN Jakarta",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
