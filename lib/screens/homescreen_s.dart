@@ -5,13 +5,14 @@ import 'package:flutter_pemula/resources/constant.dart';
 import 'package:flutter_pemula/resources/utility.dart';
 import 'package:flutter_pemula/forms/subscriptionform_s.dart';
 import 'package:flutter_pemula/screens/aboutscreen_s.dart';
-// import 'package:flutter_pemula/widgets/alert.dart';
 import 'package:flutter_pemula/widgets/socialmedia_s.dart';
 import 'package:flutter_pemula/widgets/copyright_s.dart';
 
 import 'package:meta_seo/meta_seo.dart';
 
 class HomeScreenSmall extends StatelessWidget{
+  const HomeScreenSmall({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
@@ -58,16 +59,16 @@ class HomeScreenSmall extends StatelessWidget{
                     radius: 32.0,
                   ),
                   const SizedBox(height: 8.0),
-                  Text('Halo Kakak!', style: ThemeText.subtitle_w),
-                  Text('Pengunjung', style: ThemeText.standardNormal_w),
+                  Text('Halo Kakak!', style: ThemeText.subtitleW),
+                  Text('Pengunjung', style: ThemeText.standardNormalW),
                 ],
               ),
             ),
             ListTile(
               title: Row(
                 children: [
-                  Text('Masuk', style: ThemeText.standardNormal_p),
-                  Text(' coming soon', style: ThemeText.standardSoon_p)
+                  Text('Masuk', style: ThemeText.standardNormalP),
+                  Text(' coming soon', style: ThemeText.standardSoonP)
                 ],
               ),
               onTap: () {
@@ -78,7 +79,7 @@ class HomeScreenSmall extends StatelessWidget{
             const Divider(thickness: 2),
 
             ListTile(
-              title: Text('Beranda', style: ThemeText.standardNormal_p),
+              title: Text('Beranda', style: ThemeText.standardNormalP),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -87,8 +88,8 @@ class HomeScreenSmall extends StatelessWidget{
             ListTile(
               title: Row(
                 children: [
-                  Text('Visi Misi', style: ThemeText.standardNormal_p),
-                  Text(' coming soon', style: ThemeText.standardSoon_p)
+                  Text('Visi Misi', style: ThemeText.standardNormalP),
+                  Text(' coming soon', style: ThemeText.standardSoonP)
                 ],
               ),
               onTap: () {},
@@ -97,8 +98,8 @@ class HomeScreenSmall extends StatelessWidget{
             ListTile(
               title: Row(
                 children: [
-                  Text('Pengurus Dewan Racana 2023', style: ThemeText.standardNormal_p),
-                  Text(' coming soon', style: ThemeText.standardSoon_p)
+                  Text('Pengurus Dewan Racana 2023', style: ThemeText.standardNormalP),
+                  Text(' coming soon', style: ThemeText.standardSoonP)
                 ],
               ),
               onTap: () {},
@@ -107,16 +108,16 @@ class HomeScreenSmall extends StatelessWidget{
             const Divider(thickness: 2),
 
             ListTile(
-              title: Text('Tentang Website', style: ThemeText.standardNormal_p),
+              title: Text('Tentang Website', style: ThemeText.standardNormalP),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return AboutScreenSmall();
+                  return const AboutScreenSmall();
                 }));
               },
             ),
 
             ListTile(
-              title: Text('© Pramuka UIN Jakarta 2023', style: ThemeText.standardMini_p)
+              title: Text('© Pramuka UIN Jakarta 2023', style: ThemeText.standardMiniP)
             )
           ],
         ),
@@ -126,35 +127,33 @@ class HomeScreenSmall extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              child: Stack(
-                children: [
-                  Image.asset('images/main-background.webp'),
-                  Positioned.fill(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            createMaterialColor(Constant.DS_PURPLE).withOpacity(0.15),
-                            createMaterialColor(Constant.DS_PURPLE).withOpacity(0.75),
-                          ]
-                        ),
-                      ),
-
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Selamat Datang di Website", style: ThemeText.title),
-                          Text("Racana Fatahillah - Nyi Mas Gandasari", style: ThemeText.title),
-                          Text("UIN Syarif Hidayatullah Jakarta", style: ThemeText.title),
+            Stack(
+              children: [
+                Image.asset('images/main-background.webp'),
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          createMaterialColor(Constant.DS_PURPLE).withOpacity(0.15),
+                          createMaterialColor(Constant.DS_PURPLE).withOpacity(0.75),
                         ]
                       ),
                     ),
+
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Selamat Datang di Website", style: ThemeText.title),
+                        Text("Racana Fatahillah - Nyi Mas Gandasari", style: ThemeText.title),
+                        Text("UIN Syarif Hidayatullah Jakarta", style: ThemeText.title),
+                      ]
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             Container(
               decoration: BoxDecoration(color: Constant.DS_PURPLE),
@@ -169,7 +168,7 @@ class HomeScreenSmall extends StatelessWidget{
                         ),
                       ),
                       child: Center(
-                        child: Text('Kami Ada Karena Semangat Kami!', style: ThemeText.subtitle_w)
+                        child: Text('Kami Ada Karena Semangat Kami!', style: ThemeText.subtitleW)
                       ),
                     ),
                   ),
@@ -178,12 +177,12 @@ class HomeScreenSmall extends StatelessWidget{
                   const SizedBox(height: 16),
 
                   Text('Pramuka UIN Jakarta merupakan salah satu Unit Kegiatan Khusus (UKK) yang berada pada pangkalan UIN Syarif Hidayatullah Jakarta',
-                    style: ThemeText.standardNormal_w,
+                    style: ThemeText.standardNormalW,
                     textAlign: TextAlign.justify,
                   ),
                   // const SizedBox(height: 16),
                   Text('\nSebagai Pramuka Perguruan Tinggi dan juga Mahasiswa, Kami turut mengamalkan Tri Satya dan Tri Dharma Perguruan Tinggi dengan mengadakan berbagai kegiatan dan rutinitas setiap tahunnya',
-                    style: ThemeText.standardNormal_w,
+                    style: ThemeText.standardNormalW,
                     textAlign: TextAlign.justify,
                   ),
                 ],
@@ -192,7 +191,7 @@ class HomeScreenSmall extends StatelessWidget{
 
             Container(
               decoration: BoxDecoration(color: Constant.LS_ECRU_WHITE),
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   Center(
@@ -203,13 +202,13 @@ class HomeScreenSmall extends StatelessWidget{
                         ),
                       ),
                       child: Center(
-                        child: Text('Tri Bina', style: ThemeText.subtitle_p),
+                        child: Text('Tri Bina', style: ThemeText.subtitleP),
                       ),
                     ),
                   ),
 
                   Text('Sebagai wadah untuk mempersiapkan diri menjadi pemimpin di lingkungannya dan ikut serta membangun masyarakat.',
-                    style: ThemeText.standardNormal_p,
+                    style: ThemeText.standardNormalP,
                     textAlign: TextAlign.justify,
                   ),
 
@@ -240,7 +239,7 @@ class HomeScreenSmall extends StatelessWidget{
 
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
-                                    child: Text('Bina Diri', style: ThemeText.subtitle_w),
+                                    child: Text('Bina Diri', style: ThemeText.subtitleW),
                                   ),
                                 ],
                               ),
@@ -270,7 +269,7 @@ class HomeScreenSmall extends StatelessWidget{
 
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
-                                    child: Text('Bina Satuan', style: ThemeText.subtitle_w),
+                                    child: Text('Bina Satuan', style: ThemeText.subtitleW),
                                   ),
                                 ],
                               ),
@@ -300,7 +299,7 @@ class HomeScreenSmall extends StatelessWidget{
 
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
-                                    child: Text('Bina Masyarakat', style: ThemeText.subtitle_w),
+                                    child: Text('Bina Masyarakat', style: ThemeText.subtitleW),
                                   ),
                                 ],
                               ),
@@ -316,7 +315,7 @@ class HomeScreenSmall extends StatelessWidget{
 
             Container(
               decoration: BoxDecoration(color: Constant.LS_ECRU_WHITE),
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   Center(
@@ -327,13 +326,13 @@ class HomeScreenSmall extends StatelessWidget{
                         ),
                       ),
                       child: Center(
-                        child: Text('Pantau terus informasi dari kami', style: ThemeText.subtitle_p),
+                        child: Text('Pantau terus informasi dari kami', style: ThemeText.subtitleP),
                       ),
                     ),
                   ),
 
                   Text('Dengan berlangganan newsletter kami, kakak bersedia kami kirimkan informasi terkini tentang Gerakan Pramuka, Event Kepramukaan dan informasi menarik lainnya',
-                    style: ThemeText.standardNormal_p,
+                    style: ThemeText.standardNormalP,
                     textAlign: TextAlign.justify,
                   ),
 
@@ -342,8 +341,8 @@ class HomeScreenSmall extends StatelessWidget{
               ),
             ),
 
-            SocialMediaSmall(),
-            CopyrightSmall(),
+            const SocialMediaSmall(),
+            const CopyrightSmall(),
           ],
         ),
       ),

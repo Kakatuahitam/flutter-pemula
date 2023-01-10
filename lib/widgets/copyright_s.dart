@@ -8,23 +8,21 @@ class CopyrightSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(color: Constant.DS_PURPLE),
-              padding: const EdgeInsets.all(8),
-              child: Text('© Pramuka UIN Jakarta 2023',
-                style: ThemeText.standardMini_w,
-                textAlign: TextAlign.end,
-              ),
-            )
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(color: Constant.DS_PURPLE),
+            padding: const EdgeInsets.all(8),
+            child: Text('© Pramuka UIN Jakarta 2023',
+              style: ThemeText.standardMiniW,
+              textAlign: TextAlign.end,
+            ),
+          )
+        ),
+      ],
     );
   }
 }

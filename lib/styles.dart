@@ -13,14 +13,14 @@ abstract class ThemeText {
   );
 
   // 16, w500
-  static TextStyle subtitle_p = TextStyle(
+  static TextStyle subtitleP = TextStyle(
     fontFamily: '+JakartaSansDisplay',
     fontSize: 14.0,
     fontWeight: FontWeight.w700,
     color: Constant.DS_PURPLE,
   );
 
-  static TextStyle subtitle_w = TextStyle(
+  static TextStyle subtitleW = TextStyle(
     fontFamily: '+JakartaSansDisplay',
     fontSize: 14.0,
     fontWeight: FontWeight.w700,
@@ -45,14 +45,14 @@ abstract class ThemeText {
     fontWeight: FontWeight.w700
   );
 
-  static TextStyle standardBold_p = TextStyle(
+  static TextStyle standardBoldP = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
     fontWeight: FontWeight.w700,
     color: Constant.DS_PURPLE,
   );
 
-  static TextStyle standardBold_w = TextStyle(
+  static TextStyle standardBoldW = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
     fontWeight: FontWeight.w700,
@@ -60,56 +60,56 @@ abstract class ThemeText {
   );
 
   // w400
-  static TextStyle standardNormal_p = TextStyle(
+  static TextStyle standardNormalP = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
     fontWeight: FontWeight.w500,
     color: Constant.DS_PURPLE,
   );
 
-  static TextStyle standardNormal_w = TextStyle(
-    fontFamily: '+JakartaSansText',
-    fontSize: 12.0,
-    fontWeight: FontWeight.w500,
-    color: Constant.LS_ECRU_WHITE,
-  );
-
-  static TextStyle standardMini_p = TextStyle(
-    fontFamily: '+JakartaSansText',
-    fontSize: 10.0,
-    fontWeight: FontWeight.w500,
-    color: Constant.DS_PURPLE,
-  );
-
-  static TextStyle standardMini_w = TextStyle(
-    fontFamily: '+JakartaSansText',
-    fontSize: 10.0,
-    fontWeight: FontWeight.w500,
-    color: Constant.LS_ECRU_WHITE,
-  );
-
-  static TextStyle standardFormField_p = TextStyle(
-    fontFamily: '+JakartaSansText',
-    fontSize: 12.0,
-    fontWeight: FontWeight.w500,
-    color: Constant.DS_PURPLE,
-  );
-
-  static TextStyle standardFormField_w = TextStyle(
+  static TextStyle standardNormalW = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
     fontWeight: FontWeight.w500,
     color: Constant.LS_ECRU_WHITE,
   );
 
-  static TextStyle standardSoon_p = TextStyle(
+  static TextStyle standardMiniP = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 10.0,
     fontWeight: FontWeight.w500,
     color: Constant.DS_PURPLE,
   );
 
-  static TextStyle standardSoon_w = TextStyle(
+  static TextStyle standardMiniW = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 10.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.LS_ECRU_WHITE,
+  );
+
+  static TextStyle standardFormFieldP = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.DS_PURPLE,
+  );
+
+  static TextStyle standardFormFieldW = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.LS_ECRU_WHITE,
+  );
+
+  static TextStyle standardSoonP = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 10.0,
+    fontWeight: FontWeight.w500,
+    color: Constant.DS_PURPLE,
+  );
+
+  static TextStyle standardSoonW = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 10.0,
     fontWeight: FontWeight.w500,

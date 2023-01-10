@@ -21,22 +21,22 @@ class _SubscriptionFormState extends State<SubscriptionFormSmall>{
         children: [
           IntrinsicWidth(
             child: Container(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: 200,
               ),
               child: TextField(
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Email Kakak',
                   hintText: 'pramuka@uinjkt.ac.id',
                   isDense: true,
                 ),
 
-                style: ThemeText.standardFormField_p,
+                style: ThemeText.standardFormFieldP,
               ),
             ),
           ),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
 
           SizedBox(
             width: 100.0,
@@ -46,7 +46,7 @@ class _SubscriptionFormState extends State<SubscriptionFormSmall>{
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
               ),
-              child: Text('Masuk', style: ThemeText.standardFormField_w),
+              child: Text('Masuk', style: ThemeText.standardFormFieldW),
             ),
           ),
         ],
