@@ -45,10 +45,18 @@ abstract class ThemeText {
     fontWeight: FontWeight.w700
   );
 
-  static const TextStyle standardBold = TextStyle(
+  static TextStyle standardBold_p = TextStyle(
     fontFamily: '+JakartaSansText',
     fontSize: 12.0,
-    fontWeight: FontWeight.w700
+    fontWeight: FontWeight.w700,
+    color: Constant.DS_PURPLE,
+  );
+
+  static TextStyle standardBold_w = TextStyle(
+    fontFamily: '+JakartaSansText',
+    fontSize: 12.0,
+    fontWeight: FontWeight.w700,
+    color: Constant.LS_ECRU_WHITE,
   );
 
   // w400

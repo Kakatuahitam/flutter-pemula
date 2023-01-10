@@ -3,34 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pemula/styles.dart';
 import 'package:flutter_pemula/resources/constant.dart';
 import 'package:flutter_pemula/resources/utility.dart';
-import 'package:flutter_pemula/forms/subscriptionform.dart';
-import 'package:flutter_pemula/screens/small/aboutscreen.dart';
-import 'package:flutter_pemula/widgets/small/socialmedia.dart';
-import 'package:flutter_pemula/widgets/small/copyright.dart';
+import 'package:flutter_pemula/forms/subscriptionform_s.dart';
+import 'package:flutter_pemula/screens/aboutscreen_s.dart';
+// import 'package:flutter_pemula/widgets/alert.dart';
+import 'package:flutter_pemula/widgets/socialmedia_s.dart';
+import 'package:flutter_pemula/widgets/copyright_s.dart';
 
 import 'package:meta_seo/meta_seo.dart';
-// import 'dart:js' as js;
 
-
-class Home extends StatelessWidget{
-  void showAlert(BuildContext context) {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Selamat Datang!'),
-          content: Text('Website ini masih dalam tahap pengembangan. Akses melalui ponsel untuk pengalaman terbaik',
-            style: TextStyle(fontSize: 16.0),
-          ),
-          actions: [
-            ElevatedButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Semangat!'),
-          ),
-        ],
-      )
-    );
-  }
-
+class HomeScreenSmall extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
@@ -54,7 +35,6 @@ class Home extends StatelessWidget{
       meta.seoMetaKeyValue('twitter:card', 'https://raw.githubusercontent.com/Kakatuahitam/flutter-pemula/main/images/main-background.webp');
     }
 
-    Future.delayed(Duration.zero, () => showAlert(context));
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -130,7 +110,7 @@ class Home extends StatelessWidget{
               title: Text('Tentang Website', style: ThemeText.standardNormal_p),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return AboutScreen();
+                  return AboutScreenSmall();
                 }));
               },
             ),
@@ -146,20 +126,6 @@ class Home extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Container(
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       Expanded(
-            //         child: Container(
-            //           decoration: BoxDecoration(color: Constant.DS_PURPLE),
-            //           padding: const EdgeInsets.all(8),
-            //           child: Image.asset('images/icons/pramukauinjkt48px.png', width: 48, height: 48)
-            //         )
-            //       ),
-            //     ],
-            //   ),
-            // ),
             Container(
               child: Stack(
                 children: [
@@ -371,13 +337,13 @@ class Home extends StatelessWidget{
                     textAlign: TextAlign.justify,
                   ),
 
-                  const SubscriptionForm(),
+                  const SubscriptionFormSmall(),
                 ],
               ),
             ),
 
-            SocialMedia(),
-            Copyright(),
+            SocialMediaSmall(),
+            CopyrightSmall(),
           ],
         ),
       ),

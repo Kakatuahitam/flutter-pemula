@@ -3,7 +3,7 @@ import 'package:flutter_pemula/styles.dart';
 import 'package:flutter_pemula/resources/constant.dart';
 // import 'package:flutter_pemula/widgets/small/copyright.dart';
 
-class AboutScreen extends StatelessWidget{
+class AboutScreenLarge extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(

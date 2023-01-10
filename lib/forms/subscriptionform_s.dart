@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pemula/styles.dart';
 
-class SubscriptionForm extends StatefulWidget{
-  const SubscriptionForm ({Key? key}) : super(key: key);
+class SubscriptionFormSmall extends StatefulWidget{
+  const SubscriptionFormSmall ({Key? key}) : super(key: key);
 
   @override
   _SubscriptionFormState createState() => _SubscriptionFormState();
 }
 
-class _SubscriptionFormState extends State<SubscriptionForm>{
+class _SubscriptionFormState extends State<SubscriptionFormSmall>{
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -41,7 +41,7 @@ class _SubscriptionFormState extends State<SubscriptionForm>{
           SizedBox(
             width: 100.0,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: null,
 
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
