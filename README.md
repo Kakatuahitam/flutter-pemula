@@ -1,6 +1,6 @@
 # flutter_pemula
 
-A new Flutter project.
+This project continue its growth on pramuka.uinjkt.ac.id
 
 ## Getting Started
 
